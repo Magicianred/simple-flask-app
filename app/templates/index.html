@@ -1,0 +1,19 @@
+<!-- наследуем базовый шаблон -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% for post in data %}
+        <div class="post">
+            <div class="post__inner">
+                <h2>{{ post[1] }}</h2>
+                <span class="post__date">{{ post[2] }}</span>
+                <div class="post__text">
+                    <p>
+                        {{ post[3] }}
+                        <a href="post/{{ post[0] }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

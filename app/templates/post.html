@@ -1,0 +1,17 @@
+<!-- наследуем базовый шаблон -->
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="post">
+        <div class="post__inner">
+            <h2>{{ data[1] }}</h2>
+            <span class="post__date">{{ data[2] }}</span>
+
+            <div class="post__text">
+                {% for p in data[3] %}
+                    <p>{{ p }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
